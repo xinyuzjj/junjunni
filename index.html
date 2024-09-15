@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空投记录</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        select {
+            width: 150px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>空投记录</h1>
+    
+    <!-- 筛选下拉菜单 -->
+    <label for="projectFilter">筛选项目类型:</label>
+    <select id="projectFilter" onchange="filterProjects()">
+        <option value="all">全部</option>
+        <option value="gaming">游戏</option>
+        <option value="social">社交</option>
+        <option value="testnet">测试网</option>
+        <option value="staking">质押</option>
+        <option value="trading">交易</option>
+        <option value="node">节点</option>
+    </select>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>项目类型</th>
+                <th>空投名称</th>
+                <th>空投链接</th>
+                <th>投资金额</th>
+                <th>参与时间</th>
+                <th>空投积分/代币</th>
+                <th>空投结束时间</th>
+                <th>获利金额</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-type="gaming">
+                <td>游戏</td>
+                <td>oneness第二季</td>
+                <td><a href="https://task.onenesslabs.io/?code=Z7vx1" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年8月20日</td>
+                <td>还未空投</td>
+                <td>2024年9月20日</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="gaming">
+                <td>游戏</td>
+                <td>Hamster Kombat</td>
+                <td><a href="https://t.me/hamster_kombaT_bot/start?startapp=kentId6844275919" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年9月1日</td>
+                <td>还未空投</td>
+                <td>2024年9月26日</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="gaming">
+                <td>游戏</td>
+                <td>Memefi</td>
+                <td><a href="https://t.me/memefi_coin_bot/main?startapp=r_4f11c752cf" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年9月13日</td>
+                <td>还未空投</td>
+                <td>2024年10月9日</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="social">
+                <td>社交</td>
+                <td>somon第三季</td>
+                <td><a href="https://landing.social.monster/invite?handle=allozjj&inviteCode=SVECGJ" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年9月12日</td>
+                <td>还未空投</td>
+                <td>2024年10月1日</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="testnet">
+                <td>测试网</td>
+                <td>aidx测试网</td>
+                <td><a href="https://aidx.exchange" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年7月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="testnet">
+                <td>测试网</td>
+                <td>plume测试网</td>
+                <td><a href="https://miles.plumenetwork.xyz/share/nft/a23a527f-b89c-48f3-8afa-560764cd0570?invite=PLUME-PJN1T" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年6月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="social">
+                <td>社交</td>
+                <td>domin渡渡鸟</td>
+                <td><a href="https://community.pre-registration.domin.foundation/" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年6月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="social">
+                <td>社交</td>
+                <td>revox</td>
+                <td><a href="https://content-hub.readon.me?inviteCode=H7QQDU" target="_blank">空投链接</a></td>
+                <td>2u</td>
+                <td>2024年8月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="trading">
+                <td>交易</td>
+                <td>zaros测试网</td>
+                <td><a href="https://testnet.app.zaros.fi/?ref=0x8D7DE458060BD070fE69F14031f0d425FC0b8031" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年9月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="staking">
+                <td>质押</td>
+                <td>blast-juice.finance</td>
+                <td><a href="https://app.blast.finance" target="_blank">空投链接</a></td>
+                <td>10u</td>
+                <td>2024年6月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="staking">
+                <td>质押</td>
+                <td>blast-fenixfinance</td>
+                <td><a href="https://app.blast.finance" target="_blank">空投链接</a></td>
+                <td>10u</td>
+                <td>2024年6月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="gaming">
+                <td>游戏</td>
+                <td>blast-speacebar</td>
+                <td><a href="https://blast.spacebar.xyz/board/points" target="_blank">空投链接</a></td>
+                <td>10u</td>
+                <td>2024年6月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="social">
+                <td>社交</td>
+                <td>chainbase</td>
+                <td><a href="https://genesis.chainbase.com/referral?referral_code=52OQL5DDU" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年8月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="testnet">
+                <td>测试网</td>
+                <td>henez</td>
+                <td><a href="https://testnet.henez.fi?refCode=553689" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年8月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="testnet">
+                <td>测试网</td>
+                <td>Gradient Network</td>
+                <td><a href="https://app.gradient.network/signup?code=Z71DW1" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年9月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="node">
+                <td>节点</td>
+                <td>deek</td>
+                <td><a href="https://s.deek.network/invite/detail?inviteCode=FVJXAR" target="_blank">空投链接</a></td>
+                <td>0</td>
+                <td>2024年9月</td>
+                <td>还未空投</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        function filterProjects() {
+            var filter = document.getElementById('projectFilter').value;
+            var rows = document.querySelectorAll('table tbody tr');
+            
+            rows.forEach(function(row) {
+                if (filter === 'all' || row.getAttribute('data-type') === filter) {
+                    row.classList.remove('hidden');
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
