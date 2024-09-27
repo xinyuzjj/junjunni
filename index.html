@@ -165,6 +165,24 @@
         function redirectToPage(page) {
             window.location.href = page + '.html';
         }
+        function calculateTotalRevenue() {
+            const pages = ['gaming', 'tonganme', 'social', 'testnet', 'staking', 'trading', 'node', 'NFT'];
+            let total = 0;
+
+            pages.forEach(page => {
+                const revenue = localStorage.getItem(page + 'Revenue');
+                if (revenue) {
+                    total += parseFloat(revenue);
+                }
+            });
+
+            document.getElementById('total-revenue').innerText = '总收益: ' + total + ' U';
+        }
+
+        window.onload = function() {
+            calculateTotalRevenue();
+        };
+    </script>
 
         function updateClock() {
             const now = new Date();
