@@ -148,18 +148,14 @@
             background: #e9e9e9; /* 悬停时改变背景颜色 */
             text-decoration: underline; /* 悬停时加下划线 */
         }
-    </style>
-       <script>
-        let onlineUsers = 0; // 在线人数
-
-        function updateOnlineUsers() {
-            const storedUsers = localStorage.getItem('onlineUsers');
-            onlineUsers = storedUsers ? parseInt(storedUsers) : 0;
-            onlineUsers++;
-            localStorage.setItem('onlineUsers', onlineUsers);
-            document.getElementById('online-users').innerText = '当前在线人数: ' + onlineUsers;
+   
+        .clock {
+            margin: 20px 0;
+            font-size: 20px;
+            color: #333;
         }
-
+    </style>
+    <script>
         function redirectToPage(page) {
             window.location.href = page + '.html';
         }
@@ -178,9 +174,17 @@
             document.getElementById('total-revenue').innerText = '总收益: ' + total + ' U';
         }
 
+        function updateClock() {
+            const utcDate = new Date();
+            const utcPlus8 = new Date(utcDate.getTime() + 8 * 60 * 60 * 1000);
+            document.getElementById('utc-clock').innerText = 'UTC时间: ' + utcDate.toUTCString().replace('GMT', 'UTC');
+            document.getElementById('utc8-clock').innerText = 'UTC+8时间: ' + utcPlus8.toLocaleString();
+        }
+
         window.onload = function() {
-            updateOnlineUsers(); // 更新在线人数
-            calculateTotalRevenue(); // 计算总收益
+            calculateTotalRevenue();
+            updateClock();
+            setInterval(updateClock, 1000); // 每秒更新时钟
         };
     </script>
 </head>
