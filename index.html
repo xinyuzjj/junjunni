@@ -149,7 +149,17 @@
             text-decoration: underline; /* 悬停时加下划线 */
         }
     </style>
-    <script>
+       <script>
+        let onlineUsers = 0; // 在线人数
+
+        function updateOnlineUsers() {
+            const storedUsers = localStorage.getItem('onlineUsers');
+            onlineUsers = storedUsers ? parseInt(storedUsers) : 0;
+            onlineUsers++;
+            localStorage.setItem('onlineUsers', onlineUsers);
+            document.getElementById('online-users').innerText = '当前在线人数: ' + onlineUsers;
+        }
+
         function redirectToPage(page) {
             window.location.href = page + '.html';
         }
@@ -169,12 +179,14 @@
         }
 
         window.onload = function() {
-            calculateTotalRevenue();
+            updateOnlineUsers(); // 更新在线人数
+            calculateTotalRevenue(); // 计算总收益
         };
     </script>
 </head>
 <body>
     <h1>空投研究中心</h1>
+    <div id="online-users" class="online-users">当前在线人数: 0</div> <!-- 在线人数显示 -->
     <div id="total-revenue" class="revenue">总收益: 0 U</div>
     
     <div class="button-container">
