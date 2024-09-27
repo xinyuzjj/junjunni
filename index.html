@@ -148,6 +148,7 @@
             background: #e9e9e9; /* 悬停时改变背景颜色 */
             text-decoration: underline; /* 悬停时加下划线 */
         }
+
         .clock-price-container {
             display: flex; /* 使用 Flexbox 布局 */
             justify-content: center; /* 居中对齐 */
@@ -165,6 +166,7 @@
         function redirectToPage(page) {
             window.location.href = page + '.html';
         }
+
         function calculateTotalRevenue() {
             const pages = ['gaming', 'tonganme', 'social', 'testnet', 'staking', 'trading', 'node', 'NFT'];
             let total = 0;
@@ -178,10 +180,6 @@
 
             document.getElementById('total-revenue').innerText = '总收益: ' + total + ' U';
         }
-
-        window.onload = function() {
-            calculateTotalRevenue();
-        };
 
         function updateClock() {
             const now = new Date();
@@ -206,6 +204,7 @@
         function update() {
             updateClock();
             fetchCryptoPrices();
+            calculateTotalRevenue(); // 计算总收益
         }
 
         // 每秒更新时钟，每5秒更新价格
@@ -214,6 +213,7 @@
 
         window.onload = function() {
             update(); // 页面加载时立即调用一次
+            calculateTotalRevenue(); // 计算总收益
         };
     </script>
 </head>
