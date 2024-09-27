@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质押项目</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 导入 CSS 文件 -->
+</head>
+<body>
+    <h1>质押项目</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>类型</th>
+                <th>项目名</th>
+                <th>链接</th>
+                <th>数量</th>
+                <th>开始时间</th>
+                <th>代币</th>
+                <th>结束时间</th>
+                <th>状态</th>
+                <th>状态选择</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-type="staking">
+                <td>质押</td>
+                <td>blast-juice.finance</td>
+                <td><a href="https://app.blast.finance" target="_blank">空投链接</a></td>
+                <td>10u</td>
+                <td>2024年6月</td>
+                <td>积分与$juice</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+            <tr data-type="staking">
+                <td>质押</td>
+                <td>blast-fenixfinance</td>
+                <td><a href="https://app.blast.finance" target="_blank">空投链接</a></td>
+                <td>10u</td>
+                <td>2024年6月</td>
+                <td>积分</td>
+                <td>不确定</td>
+                <td>还未空投</td>
+                <td>
+                    <select class="status-select" disabled>
+                        <option value="确定" selected>确定</option>
+                        <option value="潜在">潜在</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="back-button" onclick="window.history.back()">返回</button>
+</body>
+<script>
+    window.onload = function() {
+        const revenueCells = document.querySelectorAll('tbody tr td:nth-child(8)'); // 获取收益列
+        let totalRevenue = 0;
+        revenueCells.forEach(cell => {
+            const revenue = parseFloat(cell.innerText);
+            if (!isNaN(revenue)) {
+                totalRevenue += revenue;
+            }
+        });
+        localStorage.setItem('stakingRevenue', totalRevenue);
+    };
+</script>
+</html>
